@@ -15,7 +15,7 @@ import play.api.libs.ws.ahc.AhcWSComponents
 abstract class EmployeeApplication(context: LagomApplicationContext)
   extends LagomApplication(context)
     with ReadSideSlickPersistenceComponents
-    with WriteSideSlickPersistenceComponents
+    with WriteSideCassandraPersistenceComponents
     with HikariCPComponents
     with AhcWSComponents {
 
