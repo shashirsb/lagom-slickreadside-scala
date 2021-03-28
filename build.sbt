@@ -26,7 +26,7 @@ lazy val `employee-impl` = (project in file("employee-impl"))
   .enablePlugins(LagomScala)
   .settings(resolvers += "OAM 11g" at "https://maven.oracle.com",
     credentials += Credentials("OAM 11g", "login.oracle.com", "shashi.rsb@hotmail.com", "Hitmewell123"),
-    libraryDependencies += "com.oracle.jdbc" % "ojdbc8" % "18.3.0.0" exclude("com.oracle.jdbc", "ucp")
+    libraryDependencies += "com.oracle.jdbc" % "ojdbc8" % "18.3.0.0"
     )
   .settings(    
     libraryDependencies ++= Seq(
