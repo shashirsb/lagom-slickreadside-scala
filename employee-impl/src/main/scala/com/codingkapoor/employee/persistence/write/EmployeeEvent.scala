@@ -5,7 +5,6 @@ import java.time.LocalDate
 import com.lightbend.lagom.scaladsl.persistence.{AggregateEvent, AggregateEventTag}
 import play.api.libs.json.{Format, Json}
 
-
 object EmployeeEvent {
   val Tag: AggregateEventTag[EmployeeEvent] = AggregateEventTag[EmployeeEvent]
 }

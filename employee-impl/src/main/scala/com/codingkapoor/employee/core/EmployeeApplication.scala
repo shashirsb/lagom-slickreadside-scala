@@ -5,7 +5,6 @@ import com.codingkapoor.employee.persistence.read.{EmployeeEventProcessor, Emplo
 import com.codingkapoor.employee.persistence.write.{EmployeePersistenceEntity, EmployeeSerializerRegistry}
 import com.codingkapoor.employee.service.EmployeeServiceImpl
 import com.lightbend.lagom.scaladsl.persistence.cassandra.WriteSideCassandraPersistenceComponents
-import com.lightbend.lagom.scaladsl.persistence.jdbc.JdbcPersistenceComponents
 import com.lightbend.lagom.scaladsl.server.{LagomApplication, LagomApplicationContext}
 import com.lightbend.lagom.scaladsl.persistence.slick.ReadSideSlickPersistenceComponents
 import com.softwaremill.macwire._
@@ -16,7 +15,6 @@ abstract class EmployeeApplication(context: LagomApplicationContext)
   extends LagomApplication(context)
     with ReadSideSlickPersistenceComponents
     with WriteSideCassandraPersistenceComponents
-    with JdbcPersistenceComponents
     with HikariCPComponents
     with AhcWSComponents {
 
@@ -28,21 +26,3 @@ abstract class EmployeeApplication(context: LagomApplicationContext)
   persistentEntityRegistry.register(wire[EmployeePersistenceEntity])
   readSide.register(wire[EmployeeEventProcessor])
 }
-
-
-// abstract class EmployeeApplication(context: LagomApplicationContext)
-//   extends LagomApplication(context)
-//     with ReadSideSlickPersistenceComponents
-//     with WriteSideCassandraPersistenceComponents
-//     with JdbcPersistenceComponents
-//     with HikariCPComponents
-//     with AhcWSComponents {
-
-//   override lazy val lagomServer = serverFor[EmployeeService](wire[EmployeeServiceImpl])
-//   override lazy val jsonSerializerRegistry = EmployeeSerializerRegistry
-
-//   lazy val employeeRepository = wire[EmployeeRepository]
-
-//   persistentEntityRegistry.register(wire[EmployeePersistenceEntity])
-//   readSide.register(wire[EmployeeEventProcessor])
-// }
