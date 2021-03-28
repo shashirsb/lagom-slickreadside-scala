@@ -31,11 +31,11 @@ lazy val `employee-impl` = (project in file("employee-impl"))
       lagomScaladslPersistenceJdbc,
       lagomScaladslTestKit,
       mysql,
+      javaJdbc,
+      "com.oracle.jdbc" % "ojdbc8" % "18.3.0.0" exclude("com.oracle.jdbc", "ucp"),
       macwire,
       scalaTest
-    ),
-    libraryDependencies += javaJdbc,
-    libraryDependencies += "com.oracle.jdbc" % "ojdbc8" % "18.3.0.0" exclude("com.oracle.jdbc", "ucp")
+    )
   )
   .settings(lagomForkedTestSettings)
   .dependsOn(`employee-api`)
