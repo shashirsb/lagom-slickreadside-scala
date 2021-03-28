@@ -7,6 +7,7 @@ import com.codingkapoor.employee.service.EmployeeServiceImpl
 import com.lightbend.lagom.scaladsl.persistence.cassandra.WriteSideCassandraPersistenceComponents
 import com.lightbend.lagom.scaladsl.server.{LagomApplication, LagomApplicationContext}
 import com.lightbend.lagom.scaladsl.persistence.slick.ReadSideSlickPersistenceComponents
+import com.lightbend.lagom.scaladsl.persistence.jdbc.JdbcPersistenceComponents
 import com.softwaremill.macwire._
 import play.api.db.HikariCPComponents
 import play.api.libs.ws.ahc.AhcWSComponents
@@ -14,7 +15,7 @@ import play.api.libs.ws.ahc.AhcWSComponents
 abstract class EmployeeApplication(context: LagomApplicationContext)
   extends LagomApplication(context)
     with ReadSideSlickPersistenceComponents
-    with WriteSideCassandraPersistenceComponents
+    with JdbcPersistenceComponents
     with HikariCPComponents
     with AhcWSComponents {
 
