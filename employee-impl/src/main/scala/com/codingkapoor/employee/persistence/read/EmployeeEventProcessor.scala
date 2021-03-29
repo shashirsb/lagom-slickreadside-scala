@@ -5,7 +5,7 @@ import com.codingkapoor.employee.persistence.write.{EmployeeAdded, EmployeeEvent
 import com.lightbend.lagom.scaladsl.persistence.{AggregateEventTag, EventStreamElement, ReadSideProcessor}
 import com.lightbend.lagom.scaladsl.persistence.slick.SlickReadSide
 import org.slf4j.LoggerFactory
-//import slick.jdbc.MySQLProfile.api._
+_
 import slick.jdbc.OracleProfile.api._
 
 class EmployeeEventProcessor(readSide: SlickReadSide, employeeRepository: EmployeeRepository)
