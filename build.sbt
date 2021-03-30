@@ -54,6 +54,8 @@ lazy val `employee-impl` = (project in file("employee-impl"))
   .settings(lagomForkedTestSettings)
   .dependsOn(`employee-api`)
 
+
+lagomCassandraEnabled in ThisBuild := false
 lagomCassandraCleanOnStart in ThisBuild := false
 
 
