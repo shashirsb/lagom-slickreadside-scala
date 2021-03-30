@@ -1,7 +1,7 @@
 package com.codingkapoor.employee.persistence.write
 
 import java.time.LocalDate
-import java.time.LocalDateTime
+
 
 import play.api.libs.json.{Format, Json}
 
@@ -10,5 +10,5 @@ case class EmployeeState(id: String, name: String, gender: String, doj: LocalDat
 object EmployeeState {
   implicit val format: Format[EmployeeState] = Json.format[EmployeeState]
 
-  def startingState: EmployeeState = EmployeeState(null,null,null,LocalDateTime.now().toString,null)
+  def startingState: EmployeeState = EmployeeState(null,null,null,LocalDate.now(),null)
 }
