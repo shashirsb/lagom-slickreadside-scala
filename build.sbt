@@ -47,7 +47,9 @@ lazy val `employee-impl` = (project in file("employee-impl"))
       mysql,
       javaJdbc,
       macwire,
-      scalaTest
+      scalaTest,
+      Mockito,
+      TypeSafeConf
     )
   )
   .settings(lagomForkedTestSettings)
