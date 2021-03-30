@@ -41,7 +41,6 @@ lazy val `employee-impl` = (project in file("employee-impl"))
     )
   .settings(    
     libraryDependencies ++= Seq(
-      lagomScaladslPersistenceCassandra,
       lagomScaladslPersistenceJdbc,
       lagomScaladslTestKit,
       mysql,
@@ -55,6 +54,6 @@ lazy val `employee-impl` = (project in file("employee-impl"))
   .settings(lagomForkedTestSettings)
   .dependsOn(`employee-api`)
 
-lagomCassandraCleanOnStart in ThisBuild := true
+// lagomCassandraCleanOnStart in ThisBuild := true
 
 
