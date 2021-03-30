@@ -11,14 +11,13 @@ import com.lightbend.lagom.scaladsl.persistence.jdbc.JdbcPersistenceComponents
 import com.softwaremill.macwire._
 import play.api.db.HikariCPComponents
 import play.api.libs.ws.ahc.AhcWSComponents
-import play.filters.cors.CORSComponents
+
 
 abstract class EmployeeApplication(context: LagomApplicationContext)
   extends LagomApplication(context)
     with ReadSideSlickPersistenceComponents
     with HikariCPComponents
     with AhcWSComponents
-    with CORSComponents
     with JdbcPersistenceComponents {
 
   override lazy val lagomServer = serverFor[EmployeeService](wire[EmployeeServiceImpl])
