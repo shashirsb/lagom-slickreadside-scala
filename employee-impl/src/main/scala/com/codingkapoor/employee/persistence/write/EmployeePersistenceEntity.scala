@@ -12,7 +12,7 @@ class EmployeePersistenceEntity extends PersistentEntity {
   override type Event = EmployeeEvent
   override type State = Option[EmployeeState]
 
-  override def initialState: Option[EmployeeState] = None
+  override def initialState: Option[EmployeeState] = EmployeeState.startingState
 
   override def behavior: Behavior = {
     case state if state.isEmpty => initial

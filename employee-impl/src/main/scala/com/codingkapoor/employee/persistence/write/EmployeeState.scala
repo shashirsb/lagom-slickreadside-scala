@@ -8,4 +8,6 @@ case class EmployeeState(id: String, name: String, gender: String, doj: LocalDat
 
 object EmployeeState {
   implicit val format: Format[EmployeeState] = Json.format[EmployeeState]
+
+  def startingState: EmployeeState = EmployeeState(None, None, None, LocalDateTime.now().toString, None)
 }
