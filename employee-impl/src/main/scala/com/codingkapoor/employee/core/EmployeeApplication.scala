@@ -4,7 +4,6 @@ import com.codingkapoor.employee.api.EmployeeService
 import com.codingkapoor.employee.persistence.read.{EmployeeEventProcessor, EmployeeRepository}
 import com.codingkapoor.employee.persistence.write.{EmployeePersistenceEntity, EmployeeSerializerRegistry}
 import com.codingkapoor.employee.service.EmployeeServiceImpl
-import com.lightbend.lagom.scaladsl.persistence.cassandra.WriteSideCassandraPersistenceComponents
 import com.lightbend.lagom.scaladsl.server.{LagomApplication, LagomApplicationContext}
 import com.lightbend.lagom.scaladsl.persistence.slick.ReadSideSlickPersistenceComponents
 import com.lightbend.lagom.scaladsl.persistence.jdbc.JdbcPersistenceComponents
