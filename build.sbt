@@ -36,7 +36,7 @@ lazy val `employee-api` = (project in file("employee-api"))
 lazy val `employee-impl` = (project in file("employee-impl"))
   .enablePlugins(LagomScala)
   .settings(resolvers += "OAM 11g" at "https://maven.oracle.com",
-    credentials += Credentials("OAM 11g", "login.oracle.com", "shashi.rsb@hotmail.com", "Hitmewell123"),
+    credentials += Credentials("OAM 11g", "login.oracle.com/mysso/signon.jsp", "shashi.rsb@hotmail.com", "Hitmewell123"),
     libraryDependencies += "com.oracle.ojdbc" % "ojdbc8" % "19.3.0.0"
     )
   .settings(    
